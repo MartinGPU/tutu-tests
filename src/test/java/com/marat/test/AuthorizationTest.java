@@ -1,6 +1,7 @@
 package com.marat.test;
 
 import com.codeborne.selenide.Condition;
+import com.marat.test.properties.OwnerTests;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -9,12 +10,12 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.marat.pages.AuthPage.*;
-import static com.marat.test.TestData.loginInput;
-import static com.marat.test.TestData.passwordInput;
 import static io.qameta.allure.Allure.step;
 
 @Feature("Authorization")
 public class AuthorizationTest extends TestBase {
+
+    OwnerTests ownerTests = new OwnerTests();
 
     @Test
     @Tag("smoke")
@@ -23,19 +24,19 @@ public class AuthorizationTest extends TestBase {
     public void loginPage() {
 
         step("Open home page", () -> {
-            open(URL2);
+            open(ownerTests.credentials.url());
             sleep(3000);
         });
 
         step("Set login", () -> {
             $(userItem).click();
             sleep(1000);
-            $(loginTextInput).setValue(loginInput);
+            $(loginTextInput).setValue(ownerTests.credentials.login());
             sleep(1000);
         });
 
         step("Set password", () -> {
-            $(passwordTextInput).setValue(passwordInput);
+            $(passwordTextInput).setValue(ownerTests.credentials.password());
             sleep(1000);
         });
 

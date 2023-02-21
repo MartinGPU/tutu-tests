@@ -1,5 +1,6 @@
 package com.marat.test;
 
+import com.marat.test.properties.OwnerTests;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -8,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
 import static com.marat.pages.TicketSearchPage.*;
 import static com.marat.test.TestData.*;
 import static io.qameta.allure.Allure.step;
@@ -16,13 +16,15 @@ import static io.qameta.allure.Allure.step;
 @Feature("Ticket search")
 public class TicketSearchTest extends TestBase {
 
+    OwnerTests ownerTests = new OwnerTests();
+
     @Test
     @Tag("smoke")
     @DisplayName("Selecting route details")
     @AllureId("15041")
     void ticketSearch() {
         step("Open home page", () -> {
-            open(URL2);
+            open(ownerTests.credentials.url());
             sleep(3000);
         });
 

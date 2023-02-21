@@ -10,11 +10,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
 
-    String URL2 = "https://www.tutu.ru/";
-
     @BeforeAll
     public static void beforeAll() {
-        Configuration.browserSize = "3840×2160";
+        Configuration.browserSize = "3840x2160";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
