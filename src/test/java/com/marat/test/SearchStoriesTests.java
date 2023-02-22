@@ -1,7 +1,9 @@
 package com.marat.test;
 
 import com.marat.config.CredentialsConfig;
+import io.qameta.allure.AllureId;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +18,8 @@ public class SearchStoriesTests extends TestBase {
     public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     @Test
     @Tag("smoke")
+    @DisplayName("Stories search")
+    @AllureId("15136")
     public void searchStories() {
         step("Open home page", () -> {
             open(credentials.url());
