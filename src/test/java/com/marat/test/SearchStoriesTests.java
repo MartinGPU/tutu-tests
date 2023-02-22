@@ -37,12 +37,11 @@ public class SearchStoriesTests extends TestBase {
 
         step("Set desired story", () -> {
             $(searchBox).setValue(desiredStory).pressEnter();
-            sleep(6000);
         });
 
         step("Checking results of story search", () -> {
             $(searchResults).shouldHave(text(desiredStory));
-
+            sleep(6000);
         });
     }
 }
