@@ -2,7 +2,6 @@ package com.marat.test;
 
 import com.codeborne.selenide.Condition;
 import com.marat.config.CredentialsConfig;
-import com.marat.test.properties.OwnerTests;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;

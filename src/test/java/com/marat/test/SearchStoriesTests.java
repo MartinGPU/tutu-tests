@@ -2,6 +2,7 @@ package com.marat.test;
 
 import com.marat.config.CredentialsConfig;
 import io.qameta.allure.AllureId;
+import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -13,12 +14,13 @@ import static com.marat.pages.SearchStoriesPage.*;
 import static com.marat.test.TestData.desiredStory;
 import static io.qameta.allure.Allure.step;
 
+@Feature("Story search")
 public class SearchStoriesTests extends TestBase {
 
     public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     @Test
     @Tag("smoke")
-    @DisplayName("Stories search")
+    @DisplayName("Stories")
     @AllureId("15136")
     public void searchStories() {
         step("Open home page", () -> {
@@ -35,11 +37,12 @@ public class SearchStoriesTests extends TestBase {
 
         step("Set desired story", () -> {
             $(searchBox).setValue(desiredStory).pressEnter();
+            sleep(6000);
         });
 
         step("Checking results of story search", () -> {
             $(searchResults).shouldHave(text(desiredStory));
-            sleep(6000);
+
         });
     }
 }
