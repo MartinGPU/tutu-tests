@@ -6,5 +6,6 @@ public class TestData {
             fromTown = "Москва",
             toTown = "Иваново",
             departureResults = "Автовокзал Центральный (Щелковский), Москва",
-            arrivalResults = "Автовокзал, Иваново";
+            arrivalResults = "Автовокзал, Иваново",
+            desiredStory = "Шри Ланка";
 }
