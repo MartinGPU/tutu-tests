@@ -12,7 +12,7 @@ public class TestBase {
 
     @BeforeAll
     public static void beforeAll() {
-        Configuration.browserSize = "1366x768";
+        Configuration.browserSize = "1600x1100";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);

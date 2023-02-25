@@ -15,7 +15,7 @@ import static com.marat.test.TestData.desiredStory;
 import static io.qameta.allure.Allure.step;
 
 @Feature("Story search")
-public class SearchStoriesTests extends TestBase {
+public class SearchStoriesTest extends TestBase {
 
     public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     @Test
