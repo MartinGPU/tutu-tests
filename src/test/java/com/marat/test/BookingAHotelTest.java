@@ -22,7 +22,7 @@ public class BookingAHotelTest extends TestBase {
     @Test
     @Tag("smoke")
     @DisplayName("Hotels")
-    @AllureId("00000")
+    @AllureId("15212")
     public void searchHotel() {
         step("Open home page", () -> {
             open(credentials.url());

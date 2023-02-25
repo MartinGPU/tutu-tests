@@ -37,7 +37,7 @@ public class AuthorizationTests extends TestBase {
     @Tag("smoke1")
     @DisplayName("Unsuccessful auth")
     @MethodSource
-    @AllureId("00001")
+    @AllureId("15211")
     public void methodSource(String str1, String str2) {
         authPage.setInvalidLogin(str1, str2);
     }
