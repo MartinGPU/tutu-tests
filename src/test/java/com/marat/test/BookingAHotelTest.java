@@ -43,6 +43,7 @@ public class BookingAHotelTest extends TestBase {
         });
 
         step("Set date", () -> {
+            $("._3CiITpDw1x-x7RK80YSACL").scrollTo();
             $(dateInputArea).click();
             $(buttonRight).doubleClick();
         });

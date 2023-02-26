@@ -6,9 +6,7 @@ import com.marat.pages.AuthPage;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -20,6 +18,7 @@ import static com.marat.pages.AuthPage.*;
 import static io.qameta.allure.Allure.step;
 
 @Feature("Authorization")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class AuthorizationTests extends TestBase {
 
     public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
@@ -33,19 +32,21 @@ public class AuthorizationTests extends TestBase {
         );
     }
 
-    @ParameterizedTest
-    @Tag("smoke1")
+    @Tag("smoke")
     @DisplayName("Unsuccessful auth")
     @MethodSource
     @AllureId("15211")
+    @ParameterizedTest
+    @Order(1)
     public void methodSource(String str1, String str2) {
         authPage.setInvalidLogin(str1, str2);
     }
 
-    @Test
-    @Tag("smoke2")
+    @Tag("smoke")
     @DisplayName("Successful auth")
     @AllureId("15024")
+    @Test
+    @Order(2)
     public void loginPage() {
 
         step("Open home page", () -> {
