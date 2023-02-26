@@ -18,6 +18,7 @@ import static io.qameta.allure.Allure.step;
 public class SearchStoriesTest extends TestBase {
 
     public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
+
     @Test
     @Tag("smoke")
     @DisplayName("Stories")
