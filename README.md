@@ -1,6 +1,6 @@
 # Auto tests for <code><img height="50" src="https://cdn3.tu-tu.ru/wp-content/uploads/2021/04/01_01.png"></code>
 
-# Project in Allure TestOps with manual & automated tests <code><img height="50" src="https://github.com/Vasili888-QA/Vasili888-QA/blob/master/images/logo/AllureTestOps.png"></code>
+# Allure TestOps <code><img height="50" src="https://github.com/Vasili888-QA/Vasili888-QA/blob/master/images/logo/AllureTestOps.png"></code>
 <a target="_blank" href="https://allure.autotests.cloud/project/1899/dashboards">allure.autotests.cloud/project/1899/dashboards</a>
 
 <code><img height="400" src="https://user-images.githubusercontent.com/80305279/221429649-f84bc99d-d6c5-40df-b735-1bd0d1efbfc1.png"></code>
