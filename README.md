@@ -12,6 +12,9 @@
 
 <code><img height="400" src="https://user-images.githubusercontent.com/80305279/221429999-86753823-8250-4dcd-aaec-aa822b42689d.png"></code>
 
+# Selenoid video <code><img height="50" src="https://user-images.githubusercontent.com/80305279/221432799-cf28da9c-b438-4083-b9bb-26f04f54d5de.png"></code>
+<code><img height="400" src="https://github.com/MartinGPU/tutu-tests/blob/secondary/src/test/resources/img/136a4e620704f68ebb7b1923d574977c%20(1).gif?raw=true"></code>
+
 # Integration with Jira <code><img height="50" src="https://user-images.githubusercontent.com/80305279/221431422-c0ca55bf-b3a1-46fb-8ed8-4d71ecf294b2.png"></code>
 <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-544">jira.autotests.cloud/browse/HOMEWORK-544</a>
 
