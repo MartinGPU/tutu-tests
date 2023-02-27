@@ -1,7 +1,6 @@
 package com.marat.test.properties;
 
 import com.marat.config.CredentialsConfig;
-import com.marat.test.TestBase;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -9,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static java.lang.String.format;
 
 @Tag("properties")
-public class OwnerTests extends TestBase {
+public class OwnerTests {
 
     public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     @Test
