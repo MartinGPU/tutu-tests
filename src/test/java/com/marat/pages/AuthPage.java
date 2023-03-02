@@ -2,17 +2,15 @@ package com.marat.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.marat.config.CredentialsConfig;
-import org.aeonbits.owner.ConfigFactory;
 
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+import static com.marat.test.TestBase.credentials;
 import static com.marat.test.TestData.*;
+import static io.qameta.allure.Allure.step;
 
 public class AuthPage {
-
-    public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
-    public static SelenideElement
+    private final SelenideElement
             userItem = $("[data-ti='login_link']"),
             loginTextInput = $("[data-ti='email-field']"),
             passwordTextInput = $("[data-ti='password-field']"),
@@ -20,26 +18,54 @@ public class AuthPage {
             userItem2 = $("[data-ti='user_name_link']"),
             authAlert = $("[data-ti-error='authApi']"),
             authAlertEmail = $("[data-ti-error='email']"),
-            authAlertPaasword = $("[data-ti-error='password']");
+            authAlertPassword = $("[data-ti-error='password']");
 
-    public AuthPage setInvalidLogin(String str1, String str2) {
-        open(credentials.url());
-        sleep(3000);
-        $(userItem).click();
-        sleep(1000);
-        loginTextInput.setValue(str1);
-        passwordTextInput.setValue(str2);
-        $(submitButton).click();
-        sleep(3000);
+    public AuthPage setInvalidLogin(String userEmail, String userPassword) {
+        step("Open home page", () -> {
+            open("");
+        });
 
-        if (str1 == null & str2 == null) {
-            $(authAlertEmail).shouldHave(Condition.text(alertMessage2));
-            $(authAlertPaasword).shouldHave(Condition.text(alertMessage3));
-        } else {
-            $(authAlert).shouldHave(Condition.text(alertMessage));
-            loginTextInput.clear();
-            passwordTextInput.clear();
-        }
+        step("Set invalid creds", () -> {
+                    userItem.click();
+                    loginTextInput.setValue(userEmail);
+                    passwordTextInput.setValue(userPassword);
+                    submitButton.click();
+
+                    if (userEmail == null & userPassword == null) {
+                        authAlertEmail.shouldHave(Condition.text(alertMessage2));
+                        authAlertPassword.shouldHave(Condition.text(alertMessage3));
+                    } else {
+                        authAlert.shouldHave(Condition.text(alertMessage));
+                        loginTextInput.clear();
+                        passwordTextInput.clear();
+                    }
+                }
+        );
+        return this;
+    }
+
+    public AuthPage setValidLogin() {
+        step("Open home page", () -> {
+            open("");
+        });
+
+        step("Set login", () -> {
+            userItem.click();
+            loginTextInput.setValue(credentials.login());
+        });
+
+        step("Set password", () -> {
+            passwordTextInput.setValue(credentials.password());
+        });
+
+        step("Click on login", () -> {
+            submitButton.click();
+        });
+
+        step("Check successful auth", () -> {
+            userItem2.shouldHave(Condition.text("wwugoydwcyblc@eurokool.com"));
+        });
         return this;
     }
 }
+

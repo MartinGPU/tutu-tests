@@ -55,7 +55,6 @@ dependencies {
             "org.assertj:assertj-core:$assertjCoreVersion",
             "org.apache.logging.log4j:log4j-api:$log4jVersion",
             "org.apache.logging.log4j:log4j-core:$log4jVersion",
-            "com.github.javafaker:javafaker:1.0.2",
             "org.jsoup:jsoup:1.13.1",
             "us.codecraft:xsoup:0.3.2",
             "org.awaitility:awaitility:4.1.1")

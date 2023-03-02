@@ -1,9 +1,7 @@
 package com.marat.test;
 
-import com.marat.config.CredentialsConfig;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,7 +15,6 @@ import static io.qameta.allure.Allure.step;
 @Feature("Ticket search")
 public class TicketSearchTest extends TestBase {
 
-    public CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
 
     @Test
     @Tag("smoke")
@@ -25,7 +22,7 @@ public class TicketSearchTest extends TestBase {
     @AllureId("15041")
     void ticketSearch() {
         step("Open home page", () -> {
-            open(credentials.url());
+            open("");
             sleep(3000);
         });
 

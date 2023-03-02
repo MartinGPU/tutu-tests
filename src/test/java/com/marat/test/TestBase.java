@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.marat.config.CredentialsConfig;
 import com.marat.helpers.Attach;
+import com.marat.pages.AuthPage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -13,19 +14,18 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class TestBase {
 
     public static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
+    AuthPage authPage = new AuthPage();
 
     @BeforeAll
     public static void beforeAll() {
+        Configuration.baseUrl = "https://www.tutu.ru/";
         Configuration.browserSize = "1600x1100";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        String value1 = credentials.remoteLogin();
-        String value2 = credentials.remotePassword();
-        String value3 = credentials.remoteUrl();
-        Configuration.remote = String.format("https://%s:%s@%s", value1, value2, value3);
+        Configuration.remote = String.format("https://%s:%s@%s", credentials.remoteLogin(), credentials.remotePassword(), credentials.remoteUrl());
     }
 
     @AfterEach
