@@ -1,7 +1,7 @@
 package com.marat.test;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideConfig;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.marat.config.CredentialsConfig;
 import com.marat.helpers.Attach;
@@ -17,6 +17,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
 
+    private static final SelenideConfig defaults = new SelenideConfig();
+
     public static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     AuthPage authPage = new AuthPage();
     BookingAHotelPage bookingAHotelPage = new BookingAHotelPage();
@@ -27,6 +29,7 @@ public class TestBase {
     public static void beforeAll() {
         Configuration.baseUrl = "https://www.tutu.ru/";
         Configuration.browserSize = "1600x1100";
+        Configuration.browser = defaults.browser();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
