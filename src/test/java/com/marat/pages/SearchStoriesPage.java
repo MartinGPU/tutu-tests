@@ -4,7 +4,6 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.marat.test.TestData.desiredStory;
 import static io.qameta.allure.Allure.step;
 
@@ -22,20 +21,20 @@ public class SearchStoriesPage {
         });
 
         step("Clicking to stories", () -> {
-            $(plots).click();
+            plots.click();
         });
 
         step("Clicking to search item", () -> {
-            $(searchItem).click();
+            searchItem.click();
         });
 
         step("Set desired story", () -> {
-            $(searchBox).setValue(desiredStory).pressEnter();
+            searchBox.setValue(desiredStory).pressEnter();
         });
 
         step("Checking results of story search", () -> {
-            $(searchResults).shouldHave(text(desiredStory));
-            sleep(6000);
+            searchResults.shouldHave(text(desiredStory));
+            //sleep(6000);
         });
     }
 }

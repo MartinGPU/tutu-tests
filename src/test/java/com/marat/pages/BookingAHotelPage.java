@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.marat.test.TestData.cityHotel;
 import static io.qameta.allure.Allure.step;
 
@@ -28,6 +27,7 @@ public class BookingAHotelPage {
             searchButton = $("[data-ti='order-button-slot-content']"),
             cityCheck = $$("span").get(23),
             dateAndGuestsCheck = $$("span").get(24),
+            scrollToBlock = $("._3CiITpDw1x-x7RK80YSACL"),
             hotelCheck = $$(".Cu8QgpxhPYAa62VjVVpH").get(0);
 
     public void hotels() {
@@ -36,53 +36,53 @@ public class BookingAHotelPage {
         });
 
         step("Click on hotels", () -> {
-            $(hotelTab).click();
+            hotelTab.click();
         });
 
         step("Click on checkbox", () -> {
-            $(checkBox).click();
+            checkBox.click();
         });
 
         step("Set town", () -> {
-            $(cityInputArea).setValue(cityHotel);
-            //sleep(2000);
-            $(approveSelect).click();
+            cityInputArea.setValue(cityHotel);
+            sleep(2000);
+            approveSelect.click();
         });
 
         step("Set date", () -> {
-            $("._3CiITpDw1x-x7RK80YSACL").scrollTo();
-            $(dateInputArea).click();
-            $(buttonRight).doubleClick();
+            scrollToBlock.scrollTo();
+            dateInputArea.click();
+            buttonRight.click();
         });
 
         step("Select day", () -> {
-            $(dayBegins).click();
-            $(dayEnds).click();
+            dayBegins.click();
+            dayEnds.click();
         });
 
         step("Select guests and age", () -> {
-            $(guestSelectArea).click();
-            $(adultsGuests).click();
-            $(childrenGuests).doubleClick();
+            guestSelectArea.click();
+            adultsGuests.click();
+            childrenGuests.doubleClick();
             actions().dragAndDropBy(slideAgeChildOne, -10, 0).perform();
             actions().dragAndDropBy(slideAgeChildTwo, -70, 0).perform();
             //sleep(3000);
         });
 
         step("Approve selected guests", () -> {
-            $(approveSelectedGuests).click();
+            approveSelectedGuests.click();
             //sleep(3000);
         });
 
         step("Search hotel - results", () -> {
-            $(searchButton).click();
+            searchButton.click();
             //sleep(4000);
         });
 
         step("Check availability", () -> {
-            $(cityCheck).shouldHave(Condition.text("Сочи"));
-            $(dateAndGuestsCheck).shouldHave(Condition.text("1 апр - 30 апр • 5 гостей"));
-            $(hotelCheck).shouldBe(Condition.exist);
+            cityCheck.shouldHave(Condition.text("Сочи"));
+            dateAndGuestsCheck.shouldHave(Condition.text("1 апр - 30 апр • 5 гостей"));
+            hotelCheck.shouldBe(Condition.exist);
         });
     }
 }

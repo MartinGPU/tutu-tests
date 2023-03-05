@@ -20,7 +20,7 @@ public class AuthPage {
             authAlertEmail = $("[data-ti-error='email']"),
             authAlertPassword = $("[data-ti-error='password']");
 
-    public AuthPage setInvalidLogin(String userEmail, String userPassword) {
+    public void setInvalidLogin(String userEmail, String userPassword) {
         step("Open home page", () -> {
             open("");
         });
@@ -41,10 +41,9 @@ public class AuthPage {
                     }
                 }
         );
-        return this;
     }
 
-    public AuthPage setValidLogin() {
+    public void setValidLogin() {
         step("Open home page", () -> {
             open("");
         });
@@ -65,7 +64,6 @@ public class AuthPage {
         step("Check successful auth", () -> {
             userItem2.shouldHave(Condition.text("wwugoydwcyblc@eurokool.com"));
         });
-        return this;
     }
 }
 
