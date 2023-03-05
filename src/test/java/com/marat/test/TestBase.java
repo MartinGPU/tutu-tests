@@ -5,6 +5,9 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.marat.config.CredentialsConfig;
 import com.marat.helpers.Attach;
 import com.marat.pages.AuthPage;
+import com.marat.pages.BookingAHotelPage;
+import com.marat.pages.SearchStoriesPage;
+import com.marat.pages.TicketSearchPage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -15,6 +18,9 @@ public class TestBase {
 
     public static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     AuthPage authPage = new AuthPage();
+    BookingAHotelPage bookingAHotelPage = new BookingAHotelPage();
+    SearchStoriesPage searchStoriesPage = new SearchStoriesPage();
+    TicketSearchPage ticketSearchPage = new TicketSearchPage();
 
     @BeforeAll
     public static void beforeAll() {

@@ -81,15 +81,9 @@ tasks.withType(Test) {
     }
 }
 
-task ui_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "ui-tests"
-    }
-}
-
 task api_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "api-tests"
+        includeTags "authorization"
     }
 }
 
