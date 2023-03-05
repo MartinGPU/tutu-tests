@@ -17,7 +17,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
 
-    private static final SelenideConfig defaults = new SelenideConfig();
+    private static final SelenideConfig webBrowser = new SelenideConfig();
 
     public static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     AuthPage authPage = new AuthPage();
@@ -29,7 +29,7 @@ public class TestBase {
     public static void beforeAll() {
         Configuration.baseUrl = "https://www.tutu.ru/";
         Configuration.browserSize = "1600x1100";
-        Configuration.browser = defaults.browser();
+        Configuration.browser = webBrowser.remote();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
