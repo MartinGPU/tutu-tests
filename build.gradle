@@ -85,6 +85,6 @@ task properties_tests(type: Test) {
     useJUnitPlatform {
         includeTags "properties"
         includeTags "smoke"
-        includeTags "authorization"
+        //includeTags "authorization"
     }
 }

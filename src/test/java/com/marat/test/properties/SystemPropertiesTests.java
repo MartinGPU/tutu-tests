@@ -7,9 +7,9 @@ public class SystemPropertiesTests {
 
     @Test
     @Tag("properties")
-    void someTest() {
-        String browser = System.getProperty("browser", "yandex");
-        String version = System.getProperty("version", "23");
+    void operaTest() {
+        String browser = System.getProperty("browser", "opera");
+        String version = System.getProperty("version", "85");
         String bit = System.getProperty("bit", "64");
         String browserSize = System.getProperty("browserSize", "1600x1100");
 
@@ -18,4 +18,33 @@ public class SystemPropertiesTests {
         System.out.println(bit);
         System.out.println(browserSize);
     }
+
+    @Test
+    @Tag("properties")
+    void fireFoxTest() {
+        String browser = System.getProperty("browser", "firefox");
+        String version = System.getProperty("version", "97");
+        String bit = System.getProperty("bit", "64");
+        String browserSize = System.getProperty("browserSize", "1600x1100");
+
+        System.out.println(browser);
+        System.out.println(version);
+        System.out.println(bit);
+        System.out.println(browserSize);
+    }
+
+    @Test
+    @Tag("properties")
+    void chromeTest() {
+        String browser = System.getProperty("browser", "chrome");
+        String version = System.getProperty("version", "110");
+        String bit = System.getProperty("bit", "64");
+        String browserSize = System.getProperty("browserSize", "1600x1100");
+
+        System.out.println(browser);
+        System.out.println(version);
+        System.out.println(bit);
+        System.out.println(browserSize);
+    }
+
 }
