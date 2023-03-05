@@ -30,7 +30,7 @@ public class TestBase {
     public static void beforeAll() {
         Configuration.baseUrl = "https://www.tutu.ru/";
         Configuration.browserVersion = getProperty("selenide.browserVersion", defaults.browserVersion());
-        Configuration.browserSize = getProperty(getProperty("selenide.browserSize", defaults.browserSize()));
+        Configuration.browserSize = getProperty("selenide.browserSize", defaults.browserSize());
         Configuration.browser = getProperty("selenide.browser", defaults.browser());
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
