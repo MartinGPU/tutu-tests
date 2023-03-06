@@ -15,10 +15,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static java.lang.System.getProperty;
+import static java.awt.Toolkit.getProperty;
 
 public class TestBase {
-    private static final SelenideConfig defaults = new SelenideConfig();
+    public static SelenideConfig defaults = new SelenideConfig();
 
     public static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     AuthPage authPage = new AuthPage();
@@ -29,9 +29,9 @@ public class TestBase {
     @BeforeAll
     public static void beforeAll() {
         Configuration.baseUrl = "https://www.tutu.ru/";
-        Configuration.browserVersion = getProperty("selenide.browserVersion", defaults.browserVersion());
-        Configuration.browserSize = getProperty("selenide.browserSize", defaults.browserSize());
-        Configuration.browser = getProperty("selenide.browser", defaults.browser());
+        Configuration.browserVersion = getProperty("version", defaults.browserVersion());
+        Configuration.browserSize = getProperty("size", defaults.browserSize());
+        Configuration.browser = getProperty("browser", defaults.browser());
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
