@@ -30,11 +30,14 @@ public class SearchStoriesPage {
 
         step("Set desired story", () -> {
             searchBox.setValue(desiredStory).pressEnter();
+            sleep(20000);
         });
 
+    }
+
+    public void checkResults() {
         step("Checking results of story search", () -> {
             searchResults.shouldHave(text(desiredStory));
-            //sleep(6000);
         });
     }
 }

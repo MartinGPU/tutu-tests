@@ -17,5 +17,6 @@ public class SearchStoriesTest extends TestBase {
     @AllureId("15136")
     public void searchStories() {
         searchStoriesPage.stories();
+        searchStoriesPage.checkResults();
     }
 }

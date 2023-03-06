@@ -1,7 +1,6 @@
 package com.marat.test;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideConfig;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.marat.config.CredentialsConfig;
 import com.marat.helpers.Attach;
@@ -15,10 +14,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static java.awt.Toolkit.getProperty;
-
 public class TestBase {
-    public static SelenideConfig defaults = new SelenideConfig();
 
     public static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
     AuthPage authPage = new AuthPage();
@@ -29,9 +25,9 @@ public class TestBase {
     @BeforeAll
     public static void beforeAll() {
         Configuration.baseUrl = "https://www.tutu.ru/";
-        Configuration.browserVersion = getProperty("version", defaults.browserVersion());
-        Configuration.browserSize = getProperty("size", defaults.browserSize());
-        Configuration.browser = getProperty("browser", defaults.browser());
+        Configuration.browserVersion = System.getProperty("version", "98");
+        Configuration.browserSize = System.getProperty("size", "1600x1440");
+        Configuration.browser = System.getProperty("browser", "firefox");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -44,7 +40,7 @@ public class TestBase {
     public void tearDown() {
         Attach.screenshotAs("Last screen");
         Attach.pageSource();
-        Attach.browserConsoleLogs();
+        //Attach.browserConsoleLogs();
         Attach.addVideo();
     }
 }

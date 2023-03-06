@@ -14,7 +14,7 @@ public class TicketSearchPage {
             busTab = $("[data-content='bus']"),
             routBeginsField = $$("[data-ti='suggest-selector']").get(0),
             routEndsField = $$("[data-ti='suggest-selector']").get(1),
-            dateDepartureField = $("[data-ti='date-input']"),
+//            dateDepartureField = $("[data-ti='date-input']"),
             selectDay = $$("[data-ti='date-link']").get(1),
             passengersField = $("[data-ti='passengers-input']"),
             addPassenger = $$("[data-ti='passenger-counter-button']").get(1),
