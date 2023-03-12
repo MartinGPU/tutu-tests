@@ -1,13 +1,23 @@
 package com.marat.test;
 
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.*;
 
-public class UpdateUserDataTest extends TestBase{
+@Feature("Update user data")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class UpdateUserDataTest extends TestBase {
 
-@Test
-@Tag("update")
-   public void updateData() {
-    updateUserDataPage.updateData();
-}
+    @Order(7)
+    @Tag("update")
+    @DisplayName("update user data")
+    @AllureId("")
+    @Test
+    @Owner("Marat")
+    public void updateData() {
+        updateUserDataPage.updateData();
+        updateUserDataPage.checkProfile();
+        updateUserDataPage.clearData();
+    }
 }

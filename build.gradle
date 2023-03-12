@@ -55,7 +55,7 @@ dependencies {
             "org.assertj:assertj-core:$assertjCoreVersion",
             "org.apache.logging.log4j:log4j-api:$log4jVersion",
             "org.apache.logging.log4j:log4j-core:$log4jVersion",
-            "com.github.javafaker:javafaker:1.0.2",
+            "com.codeborne:pdf-test:1.7.0",
             "org.jsoup:jsoup:1.13.1",
             "us.codecraft:xsoup:0.3.2",
             "org.awaitility:awaitility:4.1.1")
@@ -82,10 +82,35 @@ tasks.withType(Test) {
     }
 }
 
-task properties_tests(type: Test) {
+task smoke_tests(type: Test) {
     useJUnitPlatform {
-//        includeTags "smoke"
-//        includeTags "authorization"
+        includeTags "smoke"
+    }
+}
+
+task auth_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "authorization"
+    }
+}
+
+task update_tests(type: Test) {
+    useJUnitPlatform {
         includeTags "update"
+    }
+}
+
+task download_file_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "downloads"
+    }
+}
+
+task global_run_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "downloads"
+        includeTags "update"
+        includeTags "authorization"
+        includeTags "smoke"
     }
 }

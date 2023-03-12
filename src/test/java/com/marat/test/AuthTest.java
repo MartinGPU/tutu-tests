@@ -22,23 +22,23 @@ public class AuthTest extends TestBase {
         );
     }
 
+    @Order(5)
     @Tag("authorization")
     @DisplayName("Unsuccessful auth")
     @MethodSource
     @AllureId("15211")
     @ParameterizedTest
     @Owner("Marat")
-    @Order(1)
     public void methodSource(String userEmail, String userPassword) {
         authPage.setInvalidLogin(userEmail, userPassword);
     }
 
+    @Order(6)
     @Tag("authorization")
     @DisplayName("Successful auth")
     @AllureId("15024")
     @Test
     @Owner("Marat")
-    @Order(2)
     public void loginPage() {
         authPage.setValidLogin();
     }

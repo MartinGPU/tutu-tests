@@ -3,18 +3,18 @@ package com.marat.test;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 @Feature("Story search")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SearchStoriesTest extends TestBase {
 
-    @Test
-    @Owner("Marat")
+    @Order(2)
     @Tag("smoke")
     @DisplayName("Stories")
     @AllureId("15136")
+    @Test
+    @Owner("Marat")
     public void searchStories() {
         searchStoriesPage.stories();
         searchStoriesPage.checkResults();

@@ -3,19 +3,18 @@ package com.marat.test;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 @Feature("Ticket search")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TicketSearchTest extends TestBase {
 
-
-    @Test
-    @Owner("Marat")
+    @Order(3)
     @Tag("smoke")
     @DisplayName("Selecting route details")
     @AllureId("15041")
+    @Test
+    @Owner("Marat")
     void ticketSearch() {
         ticketSearchPage.tickets();
     }

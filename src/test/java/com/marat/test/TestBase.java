@@ -19,13 +19,14 @@ public class TestBase {
     SearchStoriesPage searchStoriesPage = new SearchStoriesPage();
     TicketSearchPage ticketSearchPage = new TicketSearchPage();
     UpdateUserDataPage updateUserDataPage = new UpdateUserDataPage();
+    FileDownloadPage fileDownloadPage = new FileDownloadPage();
 
     @BeforeAll
     public static void beforeAll() {
         Configuration.baseUrl = "https://www.tutu.ru/";
-        Configuration.browserVersion = System.getProperty("version", "100");
-        Configuration.browserSize = System.getProperty("size", "1600x1400");
-        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("version", "98");
+        Configuration.browserSize = System.getProperty("size", "1366x900");
+        Configuration.browser = System.getProperty("browser", "firefox");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -38,7 +39,7 @@ public class TestBase {
     public void tearDown() {
         Attach.screenshotAs("Last screen");
         Attach.pageSource();
-        Attach.browserConsoleLogs();
+//        Attach.browserConsoleLogs();
         Attach.addVideo();
     }
 }

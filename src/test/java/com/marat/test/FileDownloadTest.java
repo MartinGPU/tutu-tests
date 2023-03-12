@@ -5,17 +5,17 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.*;
 
-@Feature("Booking a hotel")
+@Feature("Download pdf file")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class BookingAHotelTest extends TestBase {
+public class FileDownloadTest extends TestBase {
 
-    @Order(1)
-    @Tag("smoke")
-    @DisplayName("Hotels")
-    @AllureId("15212")
+    @Order(4)
+    @Tag("downloads")
+    @DisplayName("download pdf file")
+    @AllureId("")
     @Test
     @Owner("Marat")
-    public void searchHotel() {
-        bookingAHotelPage.hotels();
+    public void downloadPdfFile() {
+        fileDownloadPage.clientPage();
     }
 }
