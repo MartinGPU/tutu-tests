@@ -12,7 +12,7 @@ public class UpdateUserDataTest extends TestBase {
     @Order(7)
     @Tag("update")
     @DisplayName("Update user data")
-    @AllureId("")
+    @AllureId("16020")
     @Test
     @Owner("Marat")
     public void updateData() {

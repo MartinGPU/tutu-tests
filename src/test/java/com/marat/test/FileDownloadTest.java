@@ -12,7 +12,7 @@ public class FileDownloadTest extends TestBase {
     @Order(4)
     @Tag("downloads")
     @DisplayName("Download pdf file")
-    @AllureId("")
+    @AllureId("16019")
     @Test
     @Owner("Marat")
     public void downloadPdfFile() {
