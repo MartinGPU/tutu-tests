@@ -16,7 +16,7 @@ public class FileDownloadPage {
             pdfFile = $$(".btn-xl-l").get(1);
 
     public void clientPage() {
-        step("Open home page", () -> {
+        step("Open home page & download", () -> {
             open("https://b2b.tutu.ru/");
             File downloadedFile = pdfFile.download();
             PDF parsedPdf = new PDF(downloadedFile);

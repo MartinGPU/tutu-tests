@@ -63,9 +63,11 @@ public class UpdateUserDataPage {
     }
 
     public void clearData() {
-        imageField2.click();
-        publicName.clear();
-        description.clear();
-        saveDataButton.click();
+        step("Clear data", () -> {
+            imageField2.click();
+            publicName.clear();
+            description.clear();
+            saveDataButton.click();
+        });
     }
 }

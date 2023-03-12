@@ -11,7 +11,7 @@ public class FileDownloadTest extends TestBase {
 
     @Order(4)
     @Tag("downloads")
-    @DisplayName("download pdf file")
+    @DisplayName("Download pdf file")
     @AllureId("")
     @Test
     @Owner("Marat")

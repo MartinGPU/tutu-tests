@@ -11,7 +11,7 @@ public class UpdateUserDataTest extends TestBase {
 
     @Order(7)
     @Tag("update")
-    @DisplayName("update user data")
+    @DisplayName("Update user data")
     @AllureId("")
     @Test
     @Owner("Marat")
