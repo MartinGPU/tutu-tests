@@ -14,15 +14,15 @@ public class TicketSearchPage {
             busTab = $("[data-content='bus']"),
             routBeginsField = $$("[data-ti='suggest-selector']").get(0),
             routEndsField = $$("[data-ti='suggest-selector']").get(1),
-    //            dateDepartureField = $("[data-ti='date-input']"),
-    selectDay = $$("[data-ti='date-link']").get(1),
+//          dateDepartureField = $("[data-ti='date-input']"),
+            selectDay = $$("[data-ti='date-link']").get(1),
             passengersField = $("[data-ti='passengers-input']"),
             addPassenger = $$("[data-ti='passenger-counter-button']").get(1),
             addChildPassenger = $$("[data-ti='passenger-counter-button']").get(3),
             runSearch = $("[data-ti='submit-button']"),
             orderButton = $("[data-ti='order-button-slot-content']");
-//            departureResultContent = $$("[data-ti='stopover-place']").get(0),
-//            arrivalResultsContent = $$("[data-ti='stopover-place']").get(1);
+//          departureResultContent = $$("[data-ti='stopover-place']").get(0),
+//          arrivalResultsContent = $$("[data-ti='stopover-place']").get(1);
 
     public void tickets() {
         step("Open home page", () -> {
@@ -58,7 +58,6 @@ public class TicketSearchPage {
             addPassenger.click();
             //sleep(1000);
             addChildPassenger.click();
-
         });
 
         step("Run searching process", () -> {
