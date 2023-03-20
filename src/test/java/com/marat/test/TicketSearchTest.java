@@ -15,7 +15,7 @@ public class TicketSearchTest extends TestBase {
     @AllureId("15041")
     @Test
     @Owner("Marat")
-    void ticketSearch() {
+    public void ticketSearch() {
         ticketSearchPage.tickets();
     }
 }

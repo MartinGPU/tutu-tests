@@ -31,10 +31,6 @@ public class BookingAHotelPage {
             hotelCheck = $$(".Cu8QgpxhPYAa62VjVVpH").get(0);
 
     public void hotels() {
-        step("Open home page", () -> {
-            open("");
-        });
-
         step("Click on hotels", () -> {
             hotelTab.click();
         });
@@ -78,7 +74,9 @@ public class BookingAHotelPage {
             searchButton.click();
             //sleep(4000);
         });
+    }
 
+    public void checkResults() {
         step("Check availability", () -> {
             cityCheck.shouldHave(Condition.text("Сочи"));
             dateAndGuestsCheck.shouldHave(Condition.text("1 апр - 30 апр • 5 гостей"));

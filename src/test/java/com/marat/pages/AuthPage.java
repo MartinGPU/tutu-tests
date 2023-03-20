@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.$$;
 import static com.marat.test.TestBase.credentials;
 import static com.marat.test.TestData.*;
 import static io.qameta.allure.Allure.step;
@@ -21,9 +21,6 @@ public class AuthPage {
             authAlertPassword = $("[data-ti-error='password']");
 
     public void setInvalidLogin(String userEmail, String userPassword) {
-        step("Open home page", () -> {
-            open("");
-        });
 
         step("Set invalid creds", () -> {
                     userItem.click();
@@ -44,9 +41,6 @@ public class AuthPage {
     }
 
     public void setValidLogin() {
-        step("Open home page", () -> {
-            open("");
-        });
 
         step("Set login", () -> {
             userItem.click();

@@ -17,5 +17,6 @@ public class BookingAHotelTest extends TestBase {
     @Owner("Marat")
     public void searchHotel() {
         bookingAHotelPage.hotels();
+        bookingAHotelPage.checkResults();
     }
 }

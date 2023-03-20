@@ -9,7 +9,10 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
@@ -35,6 +38,10 @@ public class TestBase {
         Configuration.remote = String.format("https://%s:%s@%s", credentials.remoteLogin(), credentials.remotePassword(), credentials.remoteUrl());
     }
 
+    @BeforeEach
+    public void beforeEach() {
+        open("");
+    }
     @AfterEach
     public void tearDown() {
         Attach.screenshotAs("Last screen");

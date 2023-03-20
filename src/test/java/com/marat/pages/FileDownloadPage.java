@@ -20,7 +20,7 @@ public class FileDownloadPage {
             open("https://b2b.tutu.ru/");
             File downloadedFile = pdfFile.download();
             PDF parsedPdf = new PDF(downloadedFile);
-            assertThat(parsedPdf.text).contains("");
+            assertThat(parsedPdf.numberOfPages).isNotZero();
         });
     }
 }

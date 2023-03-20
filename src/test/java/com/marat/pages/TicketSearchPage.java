@@ -3,7 +3,8 @@ package com.marat.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static com.marat.test.TestData.fromTown;
 import static com.marat.test.TestData.toTown;
 import static io.qameta.allure.Allure.step;
@@ -25,11 +26,6 @@ public class TicketSearchPage {
 //            arrivalResultsContent = $$("[data-ti='stopover-place']").get(1);
 
     public void tickets() {
-        step("Open home page", () -> {
-            open("");
-            //sleep(3000);
-        });
-
         step("Select bus tab", () -> {
             busTab.click();
             //sleep(1000);

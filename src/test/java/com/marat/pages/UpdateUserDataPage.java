@@ -10,8 +10,13 @@ import static io.qameta.allure.Allure.step;
 public class UpdateUserDataPage {
 
     private final SelenideElement
+            userAuthorized = $(".MdrBbfr___authorized"),
+            userUnauthorized = $("._1NP74z4___unauthorized"),
             userItem = $("[data-ti='login_link']"),
+            userItem2 = $("[data-ti='user_name_link']"),
             loginTextInput = $("[data-ti='email-field']"),
+            logoutButton = $("[data-ti='logout_link']"),
+            registrationButton = $("[data-ti='register_link']"),
             passwordTextInput = $("[data-ti='password-field']"),
             submitButton = $("[data-ti='submit-trigger']"),
             adventures = $$(".nfzNIdRXlNVIbpPim3zpN").get(5),
@@ -28,7 +33,7 @@ public class UpdateUserDataPage {
             imageField2 = $("[data-ti = 'remove_image_button']");
 
     public void updateData() {
-        step("Open home page", () -> {
+        step("Go to adventures page", () -> {
             open("https://go.tutu.ru/");
         });
 
@@ -37,13 +42,11 @@ public class UpdateUserDataPage {
             loginTextInput.setValue(credentials.login());
             passwordTextInput.setValue(credentials.password());
             submitButton.click();
+            sleep(6000);
         });
 
         step("Go to profile", () -> {
-//            adventures.click();
-//            sleep(10000);
             adventureProfile.click();
-            radioButton.click();
             imageField.uploadFromClasspath("img/Avatar.jpg");
             publicName.setValue("Фролов Анатолий");
             description.setValue("Краткое описание");

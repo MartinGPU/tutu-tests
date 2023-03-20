@@ -16,10 +16,6 @@ public class SearchStoriesPage {
             searchResults = $(".infinite-page-title");
 
     public void stories() {
-        step("Open home page", () -> {
-            open("");
-        });
-
         step("Clicking to stories", () -> {
             plots.click();
         });
