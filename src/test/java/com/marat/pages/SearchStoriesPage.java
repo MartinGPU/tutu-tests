@@ -28,7 +28,6 @@ public class SearchStoriesPage {
             searchBox.setValue(desiredStory).pressEnter();
             sleep(20000);
         });
-
     }
 
     public void checkResults() {
