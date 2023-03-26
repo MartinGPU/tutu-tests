@@ -26,8 +26,8 @@
 
 ### For run remote tests need fill remote.properties or to pass value:
 
-* browser (default opera)
-* browserVersion (default 23)
+* browser (default chrome)
+* browserVersion (default 111)
 * browserSize (default 1366x768)
 * remoteDriverUrl (url address from selenoid or grid)
 * videoStorage (url address where you should get video)
