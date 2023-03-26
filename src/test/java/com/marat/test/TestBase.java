@@ -27,15 +27,15 @@ public class TestBase {
     @BeforeAll
     public static void beforeAll() {
         Configuration.baseUrl = "https://www.tutu.ru/";
-        Configuration.browserVersion = System.getProperty("version", "98");
+        Configuration.browserVersion = System.getProperty("version", "111.0");
         Configuration.browserSize = System.getProperty("size", "1366x900");
-        Configuration.browser = System.getProperty("browser", "firefox");
+        Configuration.browser = System.getProperty("browser", "chrome");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = String.format("https://%s:%s@%s", credentials.remoteLogin(), credentials.remotePassword(), credentials.remoteUrl());
+        Configuration.remote = "http://localhost:4444/wd/hub/";
     }
 
     @BeforeEach
@@ -46,7 +46,7 @@ public class TestBase {
     public void tearDown() {
         Attach.screenshotAs("Last screen");
         Attach.pageSource();
-//        Attach.browserConsoleLogs();
+        Attach.browserConsoleLogs();
         Attach.addVideo();
     }
 }
