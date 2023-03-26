@@ -21,7 +21,6 @@ public class AuthPage {
             authAlertPassword = $("[data-ti-error='password']");
 
     public void setInvalidLogin(String userEmail, String userPassword) {
-
         step("Set invalid creds", () -> {
                     userItem.click();
                     loginTextInput.setValue(userEmail);
@@ -41,7 +40,6 @@ public class AuthPage {
     }
 
     public void setValidLogin() {
-
         step("Set login", () -> {
             userItem.click();
             loginTextInput.setValue(credentials.login());
