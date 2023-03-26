@@ -42,6 +42,7 @@ public class TestBase {
     public void beforeEach() {
         open("");
     }
+    
     @AfterEach
     public void tearDown() {
         Attach.screenshotAs("Last screen");
