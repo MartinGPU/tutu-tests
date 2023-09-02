@@ -1,16 +1,26 @@
 # Auto tests for <code><img height="50" src="https://cdn3.tu-tu.ru/wp-content/uploads/2021/04/01_01.png"></code>
 
 # Language & tools
-<h4>There are different tools in automation testing I use:</h4>
-<code><img height="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></code>
-<code><img height="30" src="https://user-images.githubusercontent.com/80305279/221163787-90d8a388-750b-4c97-9d01-e25483235e9d.png"></code>
-<code><img height="30" src="https://user-images.githubusercontent.com/80305279/221164523-07dba4ad-afab-4470-b300-c6f314a0e49f.png"></code>
-<code><img height="30" src="https://user-images.githubusercontent.com/80305279/221165207-9b2399cc-4f54-4421-abc0-ea10865b39a9.png"></code>
-<code><img height="30" src="https://user-images.githubusercontent.com/80305279/221165923-614cc5dd-579f-49c0-aa4d-46251baed875.png"></code>
-<code><img height="30" src="https://user-images.githubusercontent.com/80305279/221166183-4a0502a2-a5aa-4d26-a97b-b5058229b3c2.png"></code>
-<code><img height="30" src="https://user-images.githubusercontent.com/80305279/221166457-53911329-4ac2-47d0-ac99-b80846bdbfba.png"></code>
-<code><img height="30" src="https://user-images.githubusercontent.com/80305279/221166678-f5522698-6974-427a-a401-dbffca3b1718.png"></code>
-<br>
+<table>
+<tbody>
+<tr>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/1200px-IntelliJ_IDEA_Icon.svg.png" width="40" height="40"><br>IntelliJ IDEA</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" width="40" height="40"><br>Java</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://static-00.iconduck.com/assets.00/gradle-icon-256x256-jq2wrvfo.png" width="40" height="40"><br>Gradle</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://junit.org/junit5/assets/img/junit5-logo.png" width="40" height="40"><br>JUnit5</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://media.trustradius.com/product-logos/M1/My/B8NQDTOWGI16.PNG" width="40" height="40"><br>Rest-Assured</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/MartinGPU/final-project/blob/main/resources/img/icons/And.jpg" width="60" height="40"><br>Android</td>
+</tr>
+<tr>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png" width="40" height="40"><br>Jenkins</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40" height="40"><br>Github</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://img.stackshare.io/service/40438/default_a9d9f8f8546d65b5f12a32106e6d03e6921e11fa.png" width="40" height="40"><br>Allure TestOps</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://logowik.com/content/uploads/images/jira2966.logowik.com.webp" width="40" height="40"><br>Jira</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" width="40" height="40"><br>Telegram Bot</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/MartinGPU/final-project/blob/main/resources/img/icons/appium.png" width="60" height="40"><br>Appium</td>
+</tr>
+</tbody>
+</table>
 
 # Allure TestOps <code><img height="50" src="https://github.com/Vasili888-QA/Vasili888-QA/blob/master/images/logo/AllureTestOps.png"></code>
 <a target="_blank" href="https://allure.autotests.cloud/project/1899/dashboards">allure.autotests.cloud/project/1899/dashboards</a>
